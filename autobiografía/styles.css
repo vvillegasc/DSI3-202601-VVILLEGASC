@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Titillium Web", sans-serif;
+  line-height: 1.6;
+  background: #f4f6f8;
+}
+
+header {
+  color: white;
+  padding: 24px 16px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111827;
+}
+
+header h1 {
+  margin: 0px 0px 0px 10px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 16px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  font-weight: 400;
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+article {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+section {
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+section h2 {
+  font-family: "Bitcount Grid Double", sans-serif;
+  font-size: 2rem;
+  border-bottom: 2px solid #bbbcc0;
+  padding-bottom: 8px;
+  font-weight: 600;
+}
+
+p {
+  font-weight: 300;
+}
+
+#sobreMi {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+#quienSoy img {
+  width: 250px;
+  border-radius: 12px;
+}
+
+#estudios h3 {
+  font-size: 1.8rem;
+  margin-top: 10px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eef2f7;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  font-weight: 600;
+  background: #e2e3e4;
+  font-weight: 700;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin: 8px 0;
+}
+.datos {
+  display: flex;
+  flex-direction: row;
+}
+video {
+  width: 200px;
+  border-radius: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 18px 16px;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
