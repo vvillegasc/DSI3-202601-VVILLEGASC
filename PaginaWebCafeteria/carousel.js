@@ -1,4 +1,3 @@
-// Carrusel vanilla JavaScript
 class Carousel {
   constructor(containerSelector, carouselClass, btnClass) {
     this.container = document.querySelector(containerSelector);
