@@ -117,22 +117,25 @@ body {
 }
 
 .itemCard {
-  max-width: 350px;
-  max-height: 600px;
+  min-width: 280px;
+  max-width: 280px;
   background-color: var(--color-valid-4);
-  border-radius: 24px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-bottom: 10px;
 }
 
 .item-image {
   width: 100%;
-  height: 300px;
+  height: 220px;
   background-color: var(--color-valid-1);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 30px;
 }
 
 .item-image img {
@@ -142,28 +145,123 @@ body {
 }
 
 .item-info {
-  padding: 40px 32px;
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
   background-color: var(--color-valid-4);
 }
 
 .item-info h6 {
-  font-size: var(--h6-size);
+  font-size: 22px;
   color: var(--color-text);
   margin: 0;
   font-weight: 400;
 }
 
 .item-info p {
-  font-size: var(--paragraph-size);
+  font-size: 16px;
   color: var(--color-text);
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
 }
 
 .item-info .shop-btn {
   align-self: center;
-  margin-top: 10px;
+  margin-top: 8px;
+  width: 180px;
+  height: 50px;
+  font-size: 16px;
+}
+
+.drinks-container,
+.food-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 80px;
+  overflow: hidden;
+}
+
+.drinks-container .carrusel,
+.food-container .carrusel {
+  display: flex;
+  gap: 20px;
+  overflow: visible;
+  transition: transform 0.4s ease;
+  width: auto;
+  flex: 1;
+}
+
+.drinks-container .carousel-btn,
+.food-container .carousel-btn {
+  position: absolute;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.drinks-container .carousel-btn:hover:not(:disabled),
+.food-container .carousel-btn:hover:not(:disabled) {
+  background-color: var(--color-titles);
+  transform: scale(1.1);
+}
+
+.drinks-container .carousel-btn:disabled,
+.food-container .carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.drinks-container .carousel-btn.prev,
+.food-container .carousel-btn.prev {
+  left: 10px;
+}
+
+.drinks-container .carousel-btn.next,
+.food-container .carousel-btn.next {
+  right: 10px;
+}
+
+.menu {
+  padding: 60px 40px;
+  background-color: var(--color-valid-4);
+}
+
+.menu h2 {
+  font-size: var(--h2-size);
+  color: var(--color-titles);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.menu hr {
+  border: none;
+  border-top: 2px solid var(--color-secondary);
+  margin-bottom: 40px;
+}
+
+.menu h3 {
+  font-size: var(--h3-size);
+  color: var(--color-text);
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.menu h3:not(:first-of-type) {
+  margin-top: 60px;
 }
