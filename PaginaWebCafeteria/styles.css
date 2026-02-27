@@ -265,3 +265,71 @@ body {
 .menu h3:not(:first-of-type) {
   margin-top: 60px;
 }
+
+.about {
+  padding: 60px 40px;
+  background-color: var(--color-valid-4);
+}
+
+.about h2 {
+  font-size: var(--h2-size);
+  color: var(--color-titles);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.about hr {
+  border: none;
+  border-top: 2px solid var(--color-secondary);
+  margin-bottom: 60px;
+}
+
+.about-content {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: var(--color-primary);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-image {
+  flex: 0 0 44%;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.about-text {
+  flex: 1;
+  padding: 50px 55px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 15px;
+  align-self: center;
+}
+
+.about-text p {
+  font-size: 16px;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+}
