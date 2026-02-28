@@ -1,4 +1,3 @@
-// Carrusel vanilla JavaScript con BEM
 class Carousel {
   constructor(containerSelector, trackClass, btnClass) {
     this.container = document.querySelector(containerSelector);
