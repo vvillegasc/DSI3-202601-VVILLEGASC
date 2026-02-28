@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workshop Práctico</title>
+    <link rel="stylesheet" href="validacion.css" />
+  </head>
+  <body>
+    <div class="validation-form">
+      <h1 class="validation-form__title">Formulario Validaciones</h1>
+      <form class="validation-form__container">
+        <input
+          type="text"
+          id="nombre"
+          class="validation-form__input"
+          placeholder="Ingresa tu nombre" />
+        <input
+          type="number"
+          id="edad"
+          class="validation-form__input"
+          placeholder="Ingresa tu edad" />
+        <input
+          type="number"
+          id="nota"
+          class="validation-form__input"
+          placeholder="Ingresa tu nota" />
+        <button
+          type="button"
+          class="validation-form__button"
+          onclick="validar()">
+          Enviar
+        </button>
+      </form>
+    </div>
+
+    <script src="validaciones.js"></script>
+  </body>
+</html>
