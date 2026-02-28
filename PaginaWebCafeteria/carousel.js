@@ -108,14 +108,12 @@ class Carousel {
     const offset = -this.currentIndex * this.cardWidth;
     this.carousel.style.transform = `translateX(${offset}px)`;
 
-    // Deshabilitar botones en los extremos
     this.prevBtn.disabled = this.currentIndex === 0;
     const maxIndex = this.cards.length - this.visibleCards;
     this.nextBtn.disabled = this.currentIndex >= maxIndex;
   }
 }
 
-// Inicializar los carruseles cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Initializing carousels...");
   const drinksCarousel = new Carousel(
