@@ -1,23 +1,16 @@
+// Carrusel vanilla JavaScript con BEM
 class Carousel {
-  constructor(containerSelector, carouselClass, btnClass) {
+  constructor(containerSelector, trackClass, btnClass) {
     this.container = document.querySelector(containerSelector);
     if (!this.container) {
       console.error(`Container ${containerSelector} not found`);
       return;
     }
 
-    console.log(`Initializing carousel for ${containerSelector}`);
-    this.carousel = this.container.querySelector(`.${carouselClass}`);
-    this.prevBtn = this.container.querySelector(`.${btnClass}.prev`);
-    this.nextBtn = this.container.querySelector(`.${btnClass}.next`);
-    this.cards = this.container.querySelectorAll(".itemCard");
-    console.log(`Found ${this.cards.length} cards in ${containerSelector}`);
-
-    this.currentIndex = 0;
-    this.cardWidth = 0;
-    this.gap = 20;
-    this.visibleCards = this.getVisibleCards();
-    this.isResizing = false;
+    this.carousel = this.container.querySelector(`.${trackClass}`);
+    this.prevBtn = this.container.querySelector(`.${btnClass}--prev`);
+    this.nextBtn = this.container.querySelector(`.${btnClass}--next`);
+    this.cards = this.container.querySelectorAll(".card");
 
     if (
       !this.carousel ||
@@ -26,8 +19,18 @@ class Carousel {
       this.cards.length === 0
     ) {
       console.error(`Carousel elements not found in ${containerSelector}`);
+      console.log("Carousel:", this.carousel);
+      console.log("Prev button:", this.prevBtn);
+      console.log("Next button:", this.nextBtn);
+      console.log("Cards:", this.cards.length);
       return;
     }
+
+    this.currentIndex = 0;
+    this.cardWidth = 0;
+    this.gap = 20;
+    this.visibleCards = this.getVisibleCards();
+    this.isResizing = false;
 
     this.init();
   }
@@ -75,14 +78,12 @@ class Carousel {
   addEventListeners() {
     this.prevBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      console.log("Prev button clicked");
       if (!this.isResizing) {
         this.prev();
       }
     });
     this.nextBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      console.log("Next button clicked");
       if (!this.isResizing) {
         this.next();
       }
@@ -108,24 +109,25 @@ class Carousel {
     const offset = -this.currentIndex * this.cardWidth;
     this.carousel.style.transform = `translateX(${offset}px)`;
 
+    // Deshabilitar botones en los extremos
     this.prevBtn.disabled = this.currentIndex === 0;
     const maxIndex = this.cards.length - this.visibleCards;
     this.nextBtn.disabled = this.currentIndex >= maxIndex;
   }
 }
 
+// Inicializar los carruseles cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM loaded, initializing carousels...");
+  console.log("Initializing carousels...");
   const drinksCarousel = new Carousel(
-    ".drinks-container",
-    "carrusel",
-    "carousel-btn",
+    ".carousel--drinks",
+    "carousel__track",
+    "carousel__button",
   );
-  console.log("Drinks carousel initialized");
   const foodCarousel = new Carousel(
-    ".food-container",
-    "carrusel",
-    "carousel-btn",
+    ".carousel--food",
+    "carousel__track",
+    "carousel__button",
   );
-  console.log("Food carousel initialized");
+  console.log("Carousels initialized");
 });
