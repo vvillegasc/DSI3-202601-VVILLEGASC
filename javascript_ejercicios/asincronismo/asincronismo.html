@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="asincronismo.css" />
+    <title>Asincronismo</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <label>Tiempo en segundos:</label>
+      <input
+        type="number"
+        id="tiempo"
+        min="0"
+        max="10"
+        placeholder="1-10 seg" />
+      <button id="button" onclick="ejecutar()">Iniciar</button>
+      <div id="resultado"></div>
+    </div>
+    <script src="asincronismo.js"></script>
+  </body>
+</html>

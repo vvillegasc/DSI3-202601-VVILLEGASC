@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.input-section {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.inputNumber {
+  padding: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#resultadosContainer {
+  margin-bottom: 20px;
+}
+
+.juego-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.juego-item label {
+  min-width: 80px;
+}
+
+.juego-item select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+#calcularContainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#btnCalcular {
+  background: #000;
+  padding: 12px 30px;
+}

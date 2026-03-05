@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piedra, Papel o Tijera - Contador</title>
+    <link rel="stylesheet" href="juego.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Piedra, Papel o Tijera</h1>
+
+      <div class="input-section">
+        <label for="numJuegos">Número de juegos (1-100):</label>
+        <input
+          type="number"
+          class="inputNumber"
+          id="numJuegos"
+          min="1"
+          max="100"
+          placeholder="Ingresa un número" />
+        <button id="btnJugar">Jugar</button>
+      </div>
+
+      <div id="resultadosContainer"></div>
+
+      <div id="calcularContainer" style="display: none">
+        <button id="btnCalcular">Calcular Ganador</button>
+      </div>
+    </div>
+
+    <script src="juego.js"></script>
+  </body>
+</html>
