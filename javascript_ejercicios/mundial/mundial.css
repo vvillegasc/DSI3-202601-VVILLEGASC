@@ -1,0 +1,79 @@
+body {
+  font-family: Arial;
+  margin: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin: 40px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input {
+  padding: 5px;
+  margin: 5px 0;
+  width: 200px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: rgb(129, 31, 31);
+  color: whitesmoke;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.partido {
+  border: 2px solid #003893;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.partido h3 {
+  color: #003893;
+  margin-top: 0;
+}
+
+.partido-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.goles-input {
+  display: inline-block;
+}
+
+.resultado-partido {
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-left: auto;
+}
+
+.ganamos {
+  color: green;
+  background-color: rgba(0, 128, 0, 0.304);
+}
+
+.perdimos {
+  color: red;
+  background-color: rgba(255, 0, 0, 0.36);
+}
+
+.empate {
+  color: orange;
+  background-color: rgba(255, 166, 0, 0.261);
+}
