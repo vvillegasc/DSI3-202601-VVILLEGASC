@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conectores</title>
+    <link rel="stylesheet" href="conectores.css" />
+  </head>
+  <body>
+    <h1>Conectores compatibles</h1>
+
+    <div class="input-section">
+      <label for="numCasos">Número de casos de prueba (1-100):</label>
+      <input
+        type="number"
+        class="inputNumber"
+        id="numCasos"
+        min="1"
+        max="100"
+        placeholder="Ingresa un número" />
+      <button id="btnGenerar">Generar</button>
+    </div>
+
+    <div id="casosContainer"></div>
+
+    <div id="calcularContainer" style="display: none">
+      <button id="btnCalcular">Verificar Compatibilidad</button>
+    </div>
+
+    <script src="conectores.js"></script>
+  </body>
+</html>
