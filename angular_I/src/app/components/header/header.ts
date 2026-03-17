@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,7 +15,10 @@ export class Header {
   @Input() actionName!: string;
   @Input() label!: string;
 
+  @Output() elements: EventEmitter<number> = new EventEmitter();
+
   calculate(): void {
+    this.elements.emit(this.count);
     console.log('La opción ingresada es: ' + this.count);
   }
 }
