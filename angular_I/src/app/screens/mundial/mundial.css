@@ -1,0 +1,103 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #fdf6ee;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #4a2c1a;
+}
+
+.mundial-title {
+  color: #6b3f1f;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.mundial-subtitle {
+  color: #7a4f2e;
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.4rem 0;
+}
+
+.mundial-hint,
+.mundial-error {
+  color: #9c6b3c;
+  font-size: 0.95rem;
+  margin: 5px 0;
+}
+
+.mundial-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.mundial-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.mundial-label {
+  color: #7a4f2e;
+  font-size: 0.9rem;
+  min-width: 1.5rem;
+  text-align: right;
+}
+
+.mundial-input {
+  background-color: #fff8f0;
+  border: 1px solid #d4a97a;
+  color: #4a2c1a;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  width: 100px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.mundial-input:focus {
+  border-color: #9c6b3c;
+}
+
+.mundial-btn {
+  display: block;
+  margin-top: 1.2rem;
+  background-color: #c8956c;
+  color: #fff8f0;
+  border: none;
+  padding: 0.6rem 1.6rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.mundial-btn:hover {
+  background-color: #a87050;
+}
+
+.mundial-result {
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+}
+
+.mundial-result.win {
+  background-color: #d4edda;
+  color: #276b3a;
+}
+
+.mundial-result.lose {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.mundial-result.draw {
+  background-color: #fff3cd;
+  color: #856404;
+}

@@ -1,8 +1,57 @@
-<h1>Bienvenido al mundial</h1>
+<h1 class="mundial-title">Bienvenido al mundial</h1>
 <app-header
-  [title]="'Quién ganará?'"
-  [description]="'Algoritmo que indica quién ganó'"
-  [label]="'Ingrese cantidad de partidos'"
+  [title]="'Colombia vs Brasil'"
+  [description]="'Algoritmo que indica quién ganó el partido'"
+  [label]="'Ingrese cantidad de casos'"
   [actionName]="'Calcular'"
->
-</app-header>
+  (elements)="generateCasos($event)"
+></app-header>
+
+@if (casos < 1 || casos > 100) {
+  <p class="mundial-error">La cantidad de casos debe estar entre 1 y 100</p>
+}
+
+@if (casos >= 1 && casos <= 100) {
+  <h4 class="mundial-subtitle">Casos de prueba</h4>
+  <p class="mundial-hint">Ingrese los goles de Brasil y Colombia en cada caso</p>
+
+  <div class="mundial-grid">
+    @for (partido of partidos; track $index) {
+      <div class="mundial-row">
+        <h5>Brasil:</h5>
+        <label class="mundial-label">{{ $index + 1 }}</label>
+        <input
+          class="mundial-input"
+          type="number"
+          min="0"
+          [(ngModel)]="partido.brasil"
+          placeholder="0"
+        />
+        <h5>Colombia:</h5>
+        <input
+          class="mundial-input"
+          type="number"
+          min="0"
+          [(ngModel)]="partido.colombia"
+          placeholder="0"
+        />
+        @if (partido.resultado !== '') {
+          <span
+            class="mundial-result"
+            [class]="
+              partido.resultado === 'ganamos'
+                ? 'win'
+                : partido.resultado === 'perdimos'
+                  ? 'lose'
+                  : 'draw'
+            "
+          >
+            {{ partido.resultado }}
+          </span>
+        }
+      </div>
+    }
+  </div>
+
+  <button class="mundial-btn" (click)="calcular()">Calcular</button>
+}
