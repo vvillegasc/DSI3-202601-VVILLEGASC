@@ -1,6 +1,8 @@
-<h4>{{ title }}</h4>
-<p>{{ description }}</p>
+<h4 class="hdr-title">{{ title }}</h4>
+<p class="hdr-description">{{ description }}</p>
 
-<label for="">{{ label }}</label>
-<input type="number" [(ngModel)]="this.count" />
-<button (click)="calculate()">{{ actionName }}</button>
+<div class="hdr-input-row">
+  <label class="hdr-label">{{ label }}</label>
+  <input class="hdr-input" type="number" [(ngModel)]="this.count" />
+  <button class="hdr-btn" (click)="calculate()">{{ actionName }}</button>
+</div>

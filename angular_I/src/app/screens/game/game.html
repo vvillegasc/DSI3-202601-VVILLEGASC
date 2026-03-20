@@ -1,4 +1,4 @@
-<h1>Bienvenido al juego</h1>
+<h1 class="game-title">Bienvenido al juego</h1>
 <app-header
   [title]="'Piedra, papel o tijera'"
   [description]="'Algoritmo que indica quién ganó'"
@@ -8,27 +8,31 @@
 ></app-header>
 
 @if (elements < 0 || elements > 100) {
-  <p>La opcion ingresada no es valida</p>
+  <p class="game-error">La opcion ingresada no es valida</p>
 }
 
 @if (elements > 0) {
-  <h4>Cantidad de juegos</h4>
-  <p>Ingrese en cada opción el ganador</p>
+  <h4 class="game-subtitle">Cantidad de juegos</h4>
+  <p class="game-hint">Ingrese en cada opción el ganador</p>
 
-  @for (item of options; track $index) {
-    <label for="">{{ $index + 1 }}</label>
-    <select [(ngModel)]="options[$index]">
-      <option value=""></option>
-      @for (jugador of jugadores; track $index; let j = $index) {
-        <option value="{{ jugador }}">{{ jugador }}</option>
-      }
-    </select>
-  }
-  <button (click)="calculateWinner()">Calcular ganador</button>
+  <div class="game-grid">
+    @for (item of options; track $index) {
+      <div class="game-row">
+        <label class="game-label">{{ $index + 1 }}</label>
+        <select class="game-select" [(ngModel)]="options[$index]">
+          <option value=""></option>
+          @for (jugador of jugadores; track $index; let j = $index) {
+            <option value="{{ jugador }}">{{ jugador }}</option>
+          }
+        </select>
+      </div>
+    }
+  </div>
+  <button class="game-btn" (click)="calculateWinner()">Calcular ganador</button>
 
-  @if (ganador !== ' ') {
-    <h1>El ganador es: {{ this.ganador }}</h1>
+  @if (ganador !== '') {
+    <h1 class="game-winner">El ganador es: {{ this.ganador }}</h1>
   }
 } @else {
-  <p>Se debe primero ingresar la cantidad de juegos</p>
+  <p class="game-hint">Se debe primero ingresar la cantidad de juegos</p>
 }
