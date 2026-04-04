@@ -5,13 +5,14 @@
 }
 
 .link-text__label {
-  color: #555;
+  color: #cccccc;
 }
 
 .link-text__link {
   color: #e8a838;
   text-decoration: none;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .link-text__link:hover {

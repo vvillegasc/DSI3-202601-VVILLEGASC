@@ -6,6 +6,11 @@
     <app-credentials-form />
   </div>
   <div class="login-form__actions">
-    <app-form-actions />
+    <app-form-actions
+      buttonLabel="Ingresar"
+      linkText="¿No tienes cuenta?"
+      linkLabel="Regístrate"
+      (linkClick)="goToRegister.emit()"
+    />
   </div>
 </form>

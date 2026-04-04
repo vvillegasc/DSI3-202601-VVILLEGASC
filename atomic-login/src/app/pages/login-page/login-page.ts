@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { LoginForm } from '../../components/organisms/login-form/login-form';
 
 @Component({
@@ -7,4 +7,6 @@ import { LoginForm } from '../../components/organisms/login-form/login-form';
   templateUrl: './login-page.html',
   styleUrl: './login-page.css',
 })
-export class LoginPage {}
+export class LoginPage {
+  @Output() goToRegister = new EventEmitter<void>();
+}

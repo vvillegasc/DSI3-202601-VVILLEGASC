@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { LoginHeader } from '../../molecules/login-header/login-header';
 import { CredentialsForm } from '../../molecules/credentials-form/credentials-form';
 import { FormActions } from '../../molecules/form-actions/form-actions';
@@ -9,4 +9,6 @@ import { FormActions } from '../../molecules/form-actions/form-actions';
   templateUrl: './login-form.html',
   styleUrl: './login-form.css',
 })
-export class LoginForm {}
+export class LoginForm {
+  @Output() goToRegister = new EventEmitter<void>();
+}

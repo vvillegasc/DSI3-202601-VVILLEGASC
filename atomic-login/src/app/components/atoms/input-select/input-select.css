@@ -1,16 +1,16 @@
-.input-field {
+.input-select {
   display: flex;
   flex-direction: column;
   gap: 6px;
   width: 100%;
 }
 
-.input-field__label {
+.input-select__label {
   font-size: 13px;
   color: #cccccc;
 }
 
-.input-field__input {
+.input-select__select {
   padding: 10px 14px;
   border: 1px solid #666666;
   border-radius: 8px;
@@ -18,13 +18,15 @@
   outline: none;
   background-color: #5a5a5a;
   color: #ffffff;
+  cursor: pointer;
   transition: border-color 0.2s;
 }
 
-.input-field__input::placeholder {
-  color: #aaaaaa;
+.input-select__select:focus {
+  border-color: #6c8ebf;
 }
 
-.input-field__input:focus {
-  border-color: #6c8ebf;
+option {
+  background-color: #4a4a4a;
+  color: #ffffff;
 }

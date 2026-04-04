@@ -1,0 +1,9 @@
+<div class="input-select">
+  <label class="input-select__label">{{ label }}</label>
+  <select class="input-select__select">
+    <option value="" disabled selected>Selecciona una carrera</option>
+    @for (option of options; track option.value) {
+      <option [value]="option.value">{{ option.label }}</option>
+    }
+  </select>
+</div>

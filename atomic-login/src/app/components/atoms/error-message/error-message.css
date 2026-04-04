@@ -3,17 +3,17 @@
   align-items: center;
   gap: 6px;
   padding: 8px 12px;
-  background-color: #fff3cd;
+  background-color: rgba(255, 243, 205, 0.15);
   border: 1px solid #e8a838;
   border-radius: 6px;
 }
 
 .error-message__icon {
   font-size: 14px;
-  color: #856404;
+  color: #e8a838;
 }
 
 .error-message__text {
   font-size: 13px;
-  color: #856404;
+  color: #f0c060;
 }

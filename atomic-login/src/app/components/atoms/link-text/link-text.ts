@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-link-text',
@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './link-text.css',
 })
 export class LinkText {
-  @Input() text: string = '¿No tienes cuenta?';
-  @Input() linkLabel: string = 'Regístrate';
-  @Input() href: string = '#';
+  @Input() text: string = '';
+  @Input() linkLabel: string = '';
+  @Output() linkClick = new EventEmitter<void>();
 }

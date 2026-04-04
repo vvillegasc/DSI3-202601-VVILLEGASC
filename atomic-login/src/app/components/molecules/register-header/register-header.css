@@ -1,16 +1,16 @@
-.login-header {
+.register-header {
   text-align: center;
   margin-bottom: 24px;
 }
 
-.login-header__title {
+.register-header__title {
   font-size: 22px;
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 4px;
 }
 
-.login-header__subtitle {
+.register-header__subtitle {
   font-size: 14px;
   color: #bbbbbb;
   margin: 0;
