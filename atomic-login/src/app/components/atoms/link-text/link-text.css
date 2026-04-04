@@ -1,0 +1,19 @@
+.link-text {
+  text-align: center;
+  font-size: 14px;
+  margin: 0;
+}
+
+.link-text__label {
+  color: #555;
+}
+
+.link-text__link {
+  color: #e8a838;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-text__link:hover {
+  text-decoration: underline;
+}

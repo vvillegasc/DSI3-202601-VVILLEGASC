@@ -1,0 +1,16 @@
+.app-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  background-color: #6c8ebf;
+  border-radius: 12px;
+  margin: 0 auto 16px;
+}
+
+.app-logo__icon {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
