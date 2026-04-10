@@ -1,0 +1,16 @@
+<form class="register-form">
+  <div class="register-form__header">
+    <app-register-header />
+  </div>
+  <div class="register-form__data">
+    <app-personal-data-form />
+  </div>
+  <div class="register-form__actions">
+    <app-form-actions
+      buttonLabel="Registrarse"
+      linkText="¿Ya tienes cuenta?"
+      linkLabel="Iniciar sesión"
+      (linkClick)="goToLogin.emit()"
+    />
+  </div>
+</form>

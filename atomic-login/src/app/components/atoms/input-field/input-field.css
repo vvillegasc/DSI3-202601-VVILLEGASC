@@ -1,0 +1,30 @@
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.input-field__label {
+  font-size: 13px;
+  color: #cccccc;
+}
+
+.input-field__input {
+  padding: 10px 14px;
+  border: 1px solid #666666;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background-color: #5a5a5a;
+  color: #ffffff;
+  transition: border-color 0.2s;
+}
+
+.input-field__input::placeholder {
+  color: #aaaaaa;
+}
+
+.input-field__input:focus {
+  border-color: #6c8ebf;
+}
