@@ -1,0 +1,12 @@
+.section-heading__title {
+  font-size: var(--h2-size);
+  color: var(--color-titles);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.section-heading__divider {
+  border: none;
+  border-top: 2px solid var(--color-secondary);
+  margin-bottom: 40px;
+}

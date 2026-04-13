@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Marmelad&display=swap');
+
+:root {
+  --h2-size: 48px;
+  --h3-size: 40px;
+  --link-size: 24px;
+
+  --color-primary: #ede0d4;
+  --color-secondary: #9c6644;
+  --color-titles: #7f5539;
+  --color-text: #432818;
+
+  --color-valid-1: #e6ccb2;
+  --color-valid-3: #b08968;
+  --color-valid-4: #f4f0ec;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Marmelad', sans-serif;
+}

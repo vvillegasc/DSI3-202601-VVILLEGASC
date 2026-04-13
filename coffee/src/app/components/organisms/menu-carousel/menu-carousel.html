@@ -1,0 +1,29 @@
+<h3 class="menu-carousel__subtitle">{{ subtitle }}</h3>
+<div class="menu-carousel">
+  <button
+    class="menu-carousel__btn menu-carousel__btn--prev"
+    (click)="prev()"
+    [disabled]="isPrevDisabled()"
+    aria-label="Previous"
+  >‹</button>
+
+  <div class="menu-carousel__track-wrapper">
+    <div class="menu-carousel__track" [style.transform]="offset">
+      @for (item of items; track item.title) {
+        <app-product-card
+          [title]="item.title"
+          [description]="item.description"
+          [imageSrc]="item.imageSrc"
+          [imageAlt]="item.imageAlt"
+        />
+      }
+    </div>
+  </div>
+
+  <button
+    class="menu-carousel__btn menu-carousel__btn--next"
+    (click)="next()"
+    [disabled]="isNextDisabled()"
+    aria-label="Next"
+  >›</button>
+</div>

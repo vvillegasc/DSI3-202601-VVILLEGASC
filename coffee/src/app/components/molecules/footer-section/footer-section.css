@@ -1,0 +1,6 @@
+.footer-section__heading {
+  font-size: 18px;
+  color: var(--color-text);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
