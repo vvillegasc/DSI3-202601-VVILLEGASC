@@ -1,0 +1,8 @@
+<div class="form-actions">
+  <div class="form-actions__submit">
+    <app-button [label]="buttonLabel" type="submit" />
+  </div>
+  <div class="form-actions__link">
+    <app-link-text [text]="linkText" [linkLabel]="linkLabel" (linkClick)="linkClick.emit()" />
+  </div>
+</div>

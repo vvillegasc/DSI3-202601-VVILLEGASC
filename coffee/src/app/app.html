@@ -1,0 +1,8 @@
+@switch (page) {
+  @case ('login') {
+    <app-login-page (goToRegister)="page = 'register'" />
+  }
+  @case ('register') {
+    <app-register-page (goToLogin)="page = 'login'" />
+  }
+}
