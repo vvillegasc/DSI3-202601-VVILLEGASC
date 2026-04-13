@@ -11,4 +11,5 @@ import { FormActions } from '../../molecules/form-actions/form-actions';
 })
 export class LoginForm {
   @Output() goToRegister = new EventEmitter<void>();
+  @Output() onSubmit = new EventEmitter<void>();
 }

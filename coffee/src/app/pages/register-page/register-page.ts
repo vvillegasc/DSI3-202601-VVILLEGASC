@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { RegisterFormComponent } from '../../components/organisms/register-form-component/register-form-component';
 
 @Component({
@@ -8,5 +9,9 @@ import { RegisterFormComponent } from '../../components/organisms/register-form-
   styleUrl: './register-page.css',
 })
 export class RegisterPage {
-  @Output() goToLogin = new EventEmitter<void>();
+  constructor(private router: Router) {}
+
+  goToLogin(): void {
+    this.router.navigate(['/login']);
+  }
 }

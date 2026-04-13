@@ -1,5 +1,5 @@
 <div class="login-page">
   <div class="login-page__card">
-    <app-login-form (goToRegister)="goToRegister.emit()" />
+    <app-login-form (goToRegister)="goToRegister()" (onSubmit)="login()" />
   </div>
 </div>
