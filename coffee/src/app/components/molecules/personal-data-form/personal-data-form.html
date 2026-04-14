@@ -1,10 +1,22 @@
 <div class="personal-data-form">
   <div class="personal-data-form__row">
     <div class="personal-data-form__field">
-      <app-input-field label="Cédula" type="text" placeholder="1234567890" />
+      <app-input-field
+        label="Cédula"
+        type="text"
+        placeholder="1234567890"
+        [value]="cedula"
+        (valueChange)="cedulaChange.emit($event)"
+      />
     </div>
     <div class="personal-data-form__field">
-      <app-input-field label="Nombre" type="text" placeholder="Juan García" />
+      <app-input-field
+        label="Nombre"
+        type="text"
+        placeholder="Juan García"
+        [value]="nombre"
+        (valueChange)="nombreChange.emit($event)"
+      />
     </div>
   </div>
   <div class="personal-data-form__field">
@@ -12,9 +24,23 @@
       label="Correo electrónico"
       type="email"
       placeholder="usuario@elbosque.edu.co"
+      [value]="email"
+      (valueChange)="emailChange.emit($event)"
     />
   </div>
   <div class="personal-data-form__field">
-    <app-input-select />
+    <app-input-select
+      [value]="carrera"
+      (valueChange)="carreraChange.emit($event)"
+    />
+  </div>
+  <div class="personal-data-form__field">
+    <app-input-field
+      label="Contraseña"
+      type="password"
+      placeholder="********"
+      [value]="password"
+      (valueChange)="passwordChange.emit($event)"
+    />
   </div>
 </div>

@@ -1,9 +1,15 @@
-<form class="register-form">
+<form class="register-form" (submit)="$event.preventDefault(); submitForm()">
   <div class="register-form__header">
     <app-register-header />
   </div>
   <div class="register-form__data">
-    <app-personal-data-form />
+    <app-personal-data-form
+      [(cedula)]="cedula"
+      [(nombre)]="nombre"
+      [(email)]="email"
+      [(carrera)]="carrera"
+      [(password)]="password"
+    />
   </div>
   <div class="register-form__actions">
     <app-form-actions
