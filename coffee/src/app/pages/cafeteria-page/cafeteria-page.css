@@ -3,6 +3,6 @@
   background-color: var(--color-valid-4);
 }
 
-.menu-section app-menu-carousel + app-menu-carousel .menu-carousel__subtitle {
+.menu-section__carousel + .menu-section__carousel {
   margin-top: 60px;
 }

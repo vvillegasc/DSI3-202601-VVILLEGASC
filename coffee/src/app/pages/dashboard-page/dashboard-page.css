@@ -9,19 +9,22 @@
   border-collapse: collapse;
   width: 100%;
   max-width: 480px;
-  margin-bottom: 24px;
 }
 
-.dashboard__table th,
-.dashboard__table td {
-  padding: 8px 16px 8px 0;
-  text-align: left;
-  vertical-align: top;
+.dashboard__row {
   border-bottom: 1px solid #ddd;
 }
 
-.dashboard__table th {
+.dashboard__label {
   font-weight: 600;
   white-space: nowrap;
-  padding-right: 32px;
+  padding: 8px 32px 8px 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.dashboard__value {
+  padding: 8px 16px 8px 0;
+  text-align: left;
+  vertical-align: top;
 }

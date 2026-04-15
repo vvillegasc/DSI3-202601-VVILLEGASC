@@ -3,11 +3,6 @@
   color: var(--color-text);
   font-weight: 400;
   margin-bottom: 30px;
-  margin-top: 60px;
-}
-
-.menu-carousel__subtitle:first-child {
-  margin-top: 0;
 }
 
 .menu-carousel {

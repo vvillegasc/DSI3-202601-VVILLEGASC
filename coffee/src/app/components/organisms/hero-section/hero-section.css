@@ -23,7 +23,7 @@
   z-index: 1;
 }
 
-.hero app-navbar {
+.hero__navbar {
   position: absolute;
   top: 0;
   width: 100%;

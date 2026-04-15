@@ -25,8 +25,3 @@
 .input-select__select:focus {
   border-color: #6c8ebf;
 }
-
-option {
-  background-color: #4a4a4a;
-  color: #ffffff;
-}
