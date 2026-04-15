@@ -1,1 +1,5 @@
-<a [href]="href" class="nav-link">{{ label }}</a>
+@if (route) {
+  <a [routerLink]="route" class="nav-link">{{ label }}</a>
+} @else {
+  <a [href]="href" class="nav-link">{{ label }}</a>
+}
