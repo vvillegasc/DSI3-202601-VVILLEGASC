@@ -10,5 +10,6 @@ import { RouterLink } from '@angular/router';
 export class NavLink {
   @Input() href: string = '';
   @Input() route: string = '';
+  @Input() fragment: string = '';
   @Input() label: string = '';
 }

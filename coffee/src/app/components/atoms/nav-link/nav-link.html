@@ -1,5 +1,5 @@
 @if (route) {
-  <a [routerLink]="route" class="nav-link">{{ label }}</a>
+  <a [routerLink]="route" [fragment]="fragment || undefined" class="nav-link">{{ label }}</a>
 } @else {
   <a [href]="href" class="nav-link">{{ label }}</a>
 }
