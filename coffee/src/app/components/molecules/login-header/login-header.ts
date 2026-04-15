@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { AppLogo } from '../../atoms/app-logo/app-logo';
+import { SienaLogo } from '../../atoms/siena-logo/siena-logo';
 
 @Component({
   selector: 'app-login-header',
-  imports: [AppLogo],
+  imports: [SienaLogo],
   templateUrl: './login-header.html',
   styleUrl: './login-header.css',
 })

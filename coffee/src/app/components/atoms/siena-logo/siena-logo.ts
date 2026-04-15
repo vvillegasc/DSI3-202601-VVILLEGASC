@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './siena-logo.css',
 })
 export class SienaLogo {
-  @Input() variant: 'hero' | 'about' | 'footer' = 'hero';
+  @Input() variant: 'hero' | 'about' | 'footer' | 'auth' = 'hero';
 }
