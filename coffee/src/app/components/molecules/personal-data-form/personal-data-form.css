@@ -1,0 +1,16 @@
+.personal-data-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.personal-data-form__row {
+  display: flex;
+  gap: 12px;
+}
+
+.personal-data-form__field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}

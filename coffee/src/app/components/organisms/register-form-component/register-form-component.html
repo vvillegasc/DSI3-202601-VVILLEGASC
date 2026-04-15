@@ -1,0 +1,26 @@
+<form class="register-form" (submit)="$event.preventDefault(); submitForm()">
+  <div class="register-form__header">
+    <app-register-header />
+  </div>
+  <div class="register-form__data">
+    <app-personal-data-form
+      [(cedula)]="cedula"
+      [(nombre)]="nombre"
+      [(apellidos)]="apellidos"
+      [(email)]="email"
+      [(ciudad)]="ciudad"
+      [(password)]="password"
+    />
+  </div>
+  @if (errorMessage) {
+    <app-error-message [message]="errorMessage" />
+  }
+  <div class="register-form__actions">
+    <app-form-actions
+      buttonLabel="Registrarse"
+      linkText="¿Ya tienes cuenta?"
+      linkLabel="Iniciar sesión"
+      (linkClick)="goToLogin.emit()"
+    />
+  </div>
+</form>

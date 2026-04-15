@@ -1,0 +1,20 @@
+<form class="login-form" (submit)="$event.preventDefault(); submitForm()">
+  <div class="login-form__header">
+    <app-login-header />
+  </div>
+  <div class="login-form__credentials">
+    <app-credentials-form
+      [(email)]="email"
+      [(password)]="password"
+      [showError]="showError"
+    />
+  </div>
+  <div class="login-form__actions">
+    <app-form-actions
+      buttonLabel="Ingresar"
+      linkText="¿No tienes cuenta?"
+      linkLabel="Regístrate"
+      (linkClick)="goToRegister.emit()"
+    />
+  </div>
+</form>

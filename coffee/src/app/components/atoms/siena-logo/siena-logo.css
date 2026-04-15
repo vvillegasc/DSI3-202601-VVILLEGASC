@@ -1,0 +1,22 @@
+.siena-logo {
+  height: auto;
+}
+
+.siena-logo--hero {
+  max-width: 700px;
+  width: 100%;
+}
+
+.siena-logo--about {
+  width: 240px;
+  margin-bottom: 12px;
+  align-self: center;
+}
+
+.siena-logo--footer {
+  width: 180px;
+}
+
+.siena-logo--auth {
+  width: 250px;
+}

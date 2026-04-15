@@ -1,0 +1,17 @@
+.login-template {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-primary);
+  padding: 32px 16px;
+}
+
+.login-template__card {
+  background-color: var(--color-valid-4);
+  border-radius: 16px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 32px rgba(67, 40, 24, 0.12);
+}

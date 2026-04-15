@@ -1,0 +1,9 @@
+<div class="contact-form-row">
+  @for (field of fields; track field.placeholder) {
+    <app-contact-input
+      [type]="field.type"
+      [placeholder]="field.placeholder"
+      [required]="field.required ?? false"
+    />
+  }
+</div>

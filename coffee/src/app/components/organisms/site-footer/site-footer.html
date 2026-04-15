@@ -1,0 +1,34 @@
+<footer class="site-footer">
+  <div class="site-footer__container">
+    <div class="site-footer__logo">
+      <app-siena-logo variant="footer" />
+    </div>
+
+    <app-footer-section
+      heading="Visit us"
+      [texts]="['123 Via Toscana, Bogotá, Colombia']"
+    />
+
+    <app-footer-section
+      heading="Hours"
+      [texts]="['Mon–Fri: 8:00 AM – 8:00 PM', 'Sat–Sun: 9:00 AM – 7:00 PM']"
+    />
+
+    <div class="site-footer__contact">
+      <app-footer-section
+        heading="Contact"
+        [texts]="['hello@sienacafe.com', '+57 300 000 0000']"
+      />
+      <div class="site-footer__social">
+        <h4 class="site-footer__follow">Follow</h4>
+        <div class="site-footer__links">
+          <app-footer-link href="#" label="Instagram" />
+          <span>·</span>
+          <app-footer-link href="#" label="TikTok" />
+          <span>·</span>
+          <app-footer-link href="#" label="Facebook" />
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,8 @@
+.menu-section {
+  padding: 60px 40px;
+  background-color: var(--color-valid-4);
+}
+
+.menu-section__carousel + .menu-section__carousel {
+  margin-top: 60px;
+}

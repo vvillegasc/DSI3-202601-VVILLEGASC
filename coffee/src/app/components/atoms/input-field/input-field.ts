@@ -1,0 +1,15 @@
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+@Component({
+  selector: 'app-input-field',
+  imports: [],
+  templateUrl: './input-field.html',
+  styleUrl: './input-field.css',
+})
+export class InputField {
+  @Input() label: string = '';
+  @Input() type: string = 'text';
+  @Input() placeholder: string = '';
+  @Input() value: string = '';
+  @Output() valueChange = new EventEmitter<string>();
+}

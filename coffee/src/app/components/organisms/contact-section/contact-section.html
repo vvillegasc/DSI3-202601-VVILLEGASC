@@ -1,0 +1,19 @@
+<section class="contact" id="contact">
+  <app-section-heading title="Contact us" />
+  <div class="contact__container">
+    <h3 class="contact__heading">Stay Connected with Siena</h3>
+    <p class="contact__subtitle">
+      Be the first to discover seasonal flavors, special events, and
+      exclusive invitations.<br />
+      Join our community and receive a little taste of Italy in your inbox.
+    </p>
+    <form class="contact__form">
+      <app-contact-form-row [fields]="nameRow" />
+      <app-contact-form-row [fields]="contactRow" />
+      <app-contact-input type="text" placeholder="Subject*" [required]="true" />
+      <app-contact-textarea placeholder="Message..." [rows]="6" [required]="true" />
+      <p class="contact__privacy">We respect your privacy. No spam, just meaningful updates.</p>
+      <app-cafe-button label="Send" variant="send" type="submit" />
+    </form>
+  </div>
+</section>

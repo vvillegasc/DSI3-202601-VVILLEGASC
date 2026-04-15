@@ -1,0 +1,28 @@
+@if (user) {
+  <div class="dashboard">
+    <table class="dashboard__table">
+      <tbody>
+        <tr class="dashboard__row">
+          <th class="dashboard__label">Cédula</th>
+          <td class="dashboard__value">{{ user.cedula }}</td>
+        </tr>
+        <tr class="dashboard__row">
+          <th class="dashboard__label">Nombre</th>
+          <td class="dashboard__value">{{ user.nombre }}</td>
+        </tr>
+        <tr class="dashboard__row">
+          <th class="dashboard__label">Apellidos</th>
+          <td class="dashboard__value">{{ user.apellidos }}</td>
+        </tr>
+        <tr class="dashboard__row">
+          <th class="dashboard__label">Correo electrónico</th>
+          <td class="dashboard__value">{{ user.email }}</td>
+        </tr>
+        <tr class="dashboard__row">
+          <th class="dashboard__label">Ciudad de residencia</th>
+          <td class="dashboard__value">{{ user.ciudad }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+}

@@ -1,0 +1,14 @@
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.form-actions__submit {
+  width: 100%;
+}
+
+.form-actions__link {
+  text-align: center;
+}

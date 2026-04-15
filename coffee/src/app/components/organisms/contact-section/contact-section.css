@@ -1,0 +1,38 @@
+.contact {
+  padding: 60px 40px;
+  background-color: var(--color-valid-4);
+}
+
+.contact__container {
+  max-width: 950px;
+  margin: 0 auto;
+  background-color: var(--color-valid-1);
+  padding: 50px 60px;
+  border-radius: 20px;
+}
+
+.contact__heading {
+  font-size: 32px;
+  color: var(--color-titles);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.contact__subtitle {
+  font-size: 16px;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact__privacy {
+  font-size: 14px;
+  color: var(--color-text);
+  margin: 10px 0;
+}
