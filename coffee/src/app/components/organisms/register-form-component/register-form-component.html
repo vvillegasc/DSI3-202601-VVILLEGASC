@@ -11,6 +11,9 @@
       [(password)]="password"
     />
   </div>
+  @if (errorMessage) {
+    <app-error-message [message]="errorMessage" />
+  }
   <div class="register-form__actions">
     <app-form-actions
       buttonLabel="Registrarse"

@@ -2,12 +2,13 @@ import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { RegisterHeader } from '../../molecules/register-header/register-header';
 import { PersonalDataForm } from '../../molecules/personal-data-form/personal-data-form';
 import { FormActions } from '../../molecules/form-actions/form-actions';
+import { ErrorMessage } from '../../atoms/error-message/error-message';
 import { LoginService } from '../../../services/login.service';
 import { User } from '../../../models/user.model';
 
 @Component({
   selector: 'app-register-form-component',
-  imports: [RegisterHeader, PersonalDataForm, FormActions],
+  imports: [RegisterHeader, PersonalDataForm, FormActions, ErrorMessage],
   templateUrl: './register-form-component.html',
   styleUrl: './register-form-component.css',
 })
@@ -20,6 +21,7 @@ export class RegisterFormComponent {
   email: string = '';
   carrera: string = '';
   password: string = '';
+  errorMessage: string = '';
 
   private loginService = inject(LoginService);
 
@@ -31,9 +33,12 @@ export class RegisterFormComponent {
       carrera: this.carrera,
       password: this.password,
     };
-    console.log('[RegisterForm] submitForm() called', user);
-    this.loginService.register(user);
-    console.log('[RegisterForm] saved to localStorage:', localStorage.getItem('siena_users'));
+    const result = this.loginService.register(user);
+    if (!result.success) {
+      this.errorMessage = result.error ?? 'Error al registrar usuario.';
+      return;
+    }
+    this.errorMessage = '';
     this.onRegister.emit();
   }
 }

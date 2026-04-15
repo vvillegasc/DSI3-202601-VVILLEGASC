@@ -12,10 +12,15 @@ export class LoginService {
     return this._currentUser();
   }
 
-  register(user: User): void {
+  register(user: User): { success: boolean; error?: string } {
     const users = this.getUsers();
+    const exists = users.some(u => u.cedula === user.cedula);
+    if (exists) {
+      return { success: false, error: 'Ya existe un usuario registrado con esa cédula.' };
+    }
     users.push(user);
     localStorage.setItem(this.KEY, JSON.stringify(users));
+    return { success: true };
   }
 
   login(email: string, password: string): boolean {
