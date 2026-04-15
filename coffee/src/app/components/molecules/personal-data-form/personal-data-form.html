@@ -13,11 +13,20 @@
       <app-input-field
         label="Nombre"
         type="text"
-        placeholder="Juan García"
+        placeholder="Juan"
         [value]="nombre"
         (valueChange)="nombreChange.emit($event)"
       />
     </div>
+  </div>
+  <div class="personal-data-form__field">
+    <app-input-field
+      label="Apellidos"
+      type="text"
+      placeholder="García López"
+      [value]="apellidos"
+      (valueChange)="apellidosChange.emit($event)"
+    />
   </div>
   <div class="personal-data-form__field">
     <app-input-field
@@ -29,9 +38,12 @@
     />
   </div>
   <div class="personal-data-form__field">
-    <app-input-select
-      [value]="carrera"
-      (valueChange)="carreraChange.emit($event)"
+    <app-input-field
+      label="Ciudad de residencia"
+      type="text"
+      placeholder="Bogotá"
+      [value]="ciudad"
+      (valueChange)="ciudadChange.emit($event)"
     />
   </div>
   <div class="personal-data-form__field">

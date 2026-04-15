@@ -18,8 +18,9 @@ export class RegisterFormComponent {
 
   cedula: string = '';
   nombre: string = '';
+  apellidos: string = '';
   email: string = '';
-  carrera: string = '';
+  ciudad: string = '';
   password: string = '';
   errorMessage: string = '';
 
@@ -29,8 +30,9 @@ export class RegisterFormComponent {
     const user: User = {
       cedula: this.cedula,
       nombre: this.nombre,
+      apellidos: this.apellidos,
       email: this.email,
-      carrera: this.carrera,
+      ciudad: this.ciudad,
       password: this.password,
     };
     const result = this.loginService.register(user);

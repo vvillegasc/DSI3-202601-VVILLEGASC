@@ -6,12 +6,12 @@
 .register-header__title {
   font-size: 22px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--color-titles);
   margin: 0 0 4px;
 }
 
 .register-header__subtitle {
   font-size: 14px;
-  color: #bbbbbb;
+  color: var(--color-secondary);
   margin: 0;
 }

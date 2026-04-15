@@ -5,16 +5,17 @@
 }
 
 .link-text__label {
-  color: #cccccc;
+  color: var(--color-text);
 }
 
 .link-text__link {
-  color: #e8a838;
+  color: var(--color-secondary);
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
 }
 
 .link-text__link:hover {
+  color: var(--color-titles);
   text-decoration: underline;
 }

@@ -1,7 +1,8 @@
 export interface User {
   cedula: string;
   nombre: string;
+  apellidos: string;
   email: string;
-  carrera: string;
+  ciudad: string;
   password: string;
 }
