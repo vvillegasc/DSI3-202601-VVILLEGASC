@@ -1,0 +1,14 @@
+<div class="pokemon-list">
+  @for (pokemon of listPokemons; track pokemon.id) {
+    <div class="pokemon-item">
+      <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name" />
+      <span>#{{ pokemon.id }}</span>
+      <span>{{ pokemon.name }}</span>
+      <div class="pokemon-item__types">
+        @for (t of pokemon.types; track t.slot) {
+          <span class="type-badge">{{ t.type.name }}</span>
+        }
+      </div>
+    </div>
+  }
+</div>

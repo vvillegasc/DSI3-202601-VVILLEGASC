@@ -13,7 +13,7 @@ export interface PokemonsListDTO {
 export interface PokemonDetailDTO {
   id: number;
   name: string;
-  type: PokemonDetailListTypeDTO[];
+  types: PokemonDetailListTypeDTO[];
   sprites: PokemonDetailSpritesDTO;
 }
 

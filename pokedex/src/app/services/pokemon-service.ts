@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable, switchMap } from 'rxjs';
 import { PokemonDetailDTO, PokemonsDTO } from '../models/model';
 
 @Injectable({
@@ -13,10 +13,20 @@ export class PokemonService {
 
   constructor(private http: HttpClient) {}
 
-  getPokemons(offset: number = 0, limit: number = 20): Observable<PokemonsDTO> {
-    return this.http.get<PokemonsDTO>(
-      `${this.BASE_URL}${this.POKEMON_PATH}?offset=${offset}&limit=${limit}`,
-    );
+  getPokemons(
+    offset: number = 0,
+    limit: number = 20,
+  ): Observable<PokemonDetailDTO[]> | Observable<unknown> {
+    return this.http
+      .get<PokemonsDTO>(`${this.BASE_URL}${this.POKEMON_PATH}?offset=${offset}&limit=${limit}`)
+      .pipe(
+        switchMap((response) => {
+          const detailPokemon = response.results.map((pokemon) => {
+            return this.getPokemon(pokemon.name);
+          });
+          return forkJoin(detailPokemon);
+        }),
+      );
   }
 
   getPokemon(name: string): Observable<PokemonDetailDTO> {
