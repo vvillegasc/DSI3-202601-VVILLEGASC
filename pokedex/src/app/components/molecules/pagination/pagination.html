@@ -1,9 +1,9 @@
 <div class="pagination">
   <button class="pagination__btn" [disabled]="!hasPrev" (click)="pageChange.emit(currentPage - 1)">
-    &#8592;
+    <
   </button>
   <span class="pagination__label">Página {{ currentPage + 1 }} de {{ totalPages }}</span>
   <button class="pagination__btn" [disabled]="!hasNext" (click)="pageChange.emit(currentPage + 1)">
-    &#8594;
+    >
   </button>
 </div>

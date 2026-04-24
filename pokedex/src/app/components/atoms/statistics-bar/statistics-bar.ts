@@ -11,6 +11,6 @@ export class StatisticsBar {
   @Input() value = 0;
 
   get percentage(): number {
-    return Math.min((this.value / 255) * 100, 100);
+    return Math.min(this.value, 100);
   }
 }

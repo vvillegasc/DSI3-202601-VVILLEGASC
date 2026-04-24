@@ -1,19 +1,22 @@
-<div class="layout">
-  <aside class="layout__detail">
-    <app-pokemon-card
-      [pokemon]="selectedPokemon()"
-      (search)="onSearch($event)"
-    />
-  </aside>
-  <main class="layout__gallery">
-    <app-pokemon-gallery
-      [pokemons]="listPokemons()"
-      (pokemonSelected)="onPokemonSelected($event)"
-    />
-    <app-pagination
-      [currentPage]="currentPage()"
-      [totalPages]="totalPages()"
-      (pageChange)="loadPage($event)"
-    />
-  </main>
+<div class="pokemon-page-wrapper">
+  <h1 class="pokemon-page-wrapper__title">Angular PokeFinder</h1>
+
+  <div class="pokemon-page">
+    <aside class="pokemon-page__detail">
+      <h2 class="pokemon-page__section-title">POKEMON DETALLE</h2>
+      <app-pokemon-card [pokemon]="selectedPokemon()" (search)="onSearch($event)" />
+    </aside>
+    <main class="pokemon-page__gallery">
+      <h2 class="pokemon-page__section-title">GALERÍA DE EXPLORACIÓN</h2>
+      <app-pokemon-gallery
+        [pokemons]="listPokemons()"
+        (pokemonSelected)="onPokemonSelected($event)"
+      />
+      <app-pagination
+        [currentPage]="currentPage()"
+        [totalPages]="totalPages()"
+        (pageChange)="loadPage($event)"
+      />
+    </main>
+  </div>
 </div>

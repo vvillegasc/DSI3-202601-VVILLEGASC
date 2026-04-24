@@ -1,6 +1,5 @@
-<section class="gallery">
-  <h2 class="gallery__title">GALERÍA DE EXPLORACIÓN</h2>
-  <div class="gallery__grid">
+<section class="pokemon-gallery">
+  <div class="pokemon-gallery__grid">
     @for (pokemon of pokemons; track pokemon.id) {
       <app-info-card [pokemon]="pokemon" (selected)="pokemonSelected.emit($event)" />
     }

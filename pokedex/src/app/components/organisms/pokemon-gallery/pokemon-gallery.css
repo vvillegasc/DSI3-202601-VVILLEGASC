@@ -1,24 +1,11 @@
-.gallery {
+.pokemon-gallery {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-.gallery__title {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #1e3a8a;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.gallery__grid {
+.pokemon-gallery__grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
-}
-
-@media (max-width: 900px) {
-  .gallery__grid { grid-template-columns: repeat(3, 1fr); }
 }

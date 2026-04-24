@@ -1,5 +1,5 @@
-<div class="stats">
-  <h4 class="stats__title">ESTADÍSTICAS BASE</h4>
+<div class="statistics-table">
+  <h4 class="statistics-table__title">ESTADÍSTICAS BASE</h4>
   @for (stat of filteredStats; track stat.label) {
     <app-statistics-bar [label]="stat.label" [value]="stat.value" />
   }

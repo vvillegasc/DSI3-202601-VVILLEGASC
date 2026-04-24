@@ -7,7 +7,7 @@
 }
 
 .pagination__btn {
-  background: #3b82f6;
+  background: var(--color-primary);
   color: white;
   border: none;
   border-radius: 8px;
@@ -22,18 +22,18 @@
 }
 
 .pagination__btn:hover:not(:disabled) {
-  background: #1d4ed8;
+  background: var(--color-primary-dark);
 }
 
 .pagination__btn:disabled {
-  background: #bfdbfe;
+  background: var(--color-border);
   cursor: not-allowed;
 }
 
 .pagination__label {
   font-size: 13px;
   font-weight: 600;
-  color: #1e3a8a;
+  color: var(--color-text-dark);
   min-width: 120px;
   text-align: center;
 }
