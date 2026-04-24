@@ -1,0 +1,7 @@
+<section class="pokemon-gallery">
+  <div class="pokemon-gallery__grid">
+    @for (pokemon of pokemons; track pokemon.id) {
+      <app-info-card [pokemon]="pokemon" (selected)="pokemonSelected.emit($event)" />
+    }
+  </div>
+</section>

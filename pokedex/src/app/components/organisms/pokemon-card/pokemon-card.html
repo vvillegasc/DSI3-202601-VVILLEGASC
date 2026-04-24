@@ -1,0 +1,30 @@
+<div class="pokemon-card">
+  <div class="pokemon-card__search">
+    <app-text-input
+      placeholder="Busca por nombre o ID (ej: 25)..."
+      [value]="searchTerm"
+      (valueChange)="onSearchChange($event)"
+    />
+    <app-button label="BUSCAR" (click)="onSearch()" />
+  </div>
+
+  @if (pokemon) {
+    <div class="pokemon-card__body">
+      <img class="pokemon-card__image" [src]="pokemon.sprites.front_default" [alt]="pokemon.name" />
+      <div class="pokemon-card__info">
+        <div class="pokemon-card__name">
+          <app-name [pokemonName]="pokemon.name" size="lg" />
+          <app-pokemon-number [pokemonId]="pokemon.id" />
+        </div>
+        <div class="pokemon-card__types">
+          @for (t of pokemon.types; track t.slot) {
+            <span [class]="'type-badge type-badge--' + t.type.name">{{ t.type.name }}</span>
+          }
+        </div>
+      </div>
+      <app-statistics-table [stats]="pokemon.stats" />
+    </div>
+  } @else {
+    <p class="pokemon-card__empty">Selecciona un pokémon de la galería o búscalo por nombre.</p>
+  }
+</div>

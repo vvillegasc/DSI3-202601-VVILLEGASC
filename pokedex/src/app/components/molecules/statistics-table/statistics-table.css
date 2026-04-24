@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.statistics-table {
+  display: flex;
+  width: 100%;
+  margin-top: 15px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statistics-table__title {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 1px;
+  color: var(--color-text-dark);
+  margin: 0 0 4px 0;
+}

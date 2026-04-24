@@ -1,0 +1,5 @@
+.pokemon-number {
+  font-size: 20px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}

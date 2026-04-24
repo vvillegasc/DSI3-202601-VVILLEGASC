@@ -1,0 +1,10 @@
+<div class="info-card" (click)="onSelect()">
+  <img class="info-card__image" [src]="pokemon.sprites.front_default" [alt]="pokemon.name" />
+  <app-pokemon-number [pokemonId]="pokemon.id" />
+  <app-name [pokemonName]="pokemon.name" size="sm" />
+  <div class="info-card__types">
+    @for (t of pokemon.types; track t.slot) {
+      <span [class]="'type-badge type-badge--' + t.type.name">{{ t.type.name }}</span>
+    }
+  </div>
+</div>

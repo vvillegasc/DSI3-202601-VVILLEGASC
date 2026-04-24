@@ -1,0 +1,14 @@
+.pokemon-name {
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: 0.5px;
+}
+
+.pokemon-name--lg {
+  font-size: 25px;
+}
+
+.pokemon-name--sm {
+  font-size: 20px;
+  letter-spacing: 0.3px;
+}

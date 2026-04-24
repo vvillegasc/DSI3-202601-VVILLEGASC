@@ -1,0 +1,11 @@
+.pokemon-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pokemon-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
