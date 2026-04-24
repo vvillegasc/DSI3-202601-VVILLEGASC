@@ -15,6 +15,15 @@ export interface PokemonDetailDTO {
   name: string;
   types: PokemonDetailListTypeDTO[];
   sprites: PokemonDetailSpritesDTO;
+  stats: PokemonStatDTO[];
+}
+
+export interface PokemonStatDTO {
+  base_stat: number;
+  stat: {
+    name: string;
+    url: string;
+  };
 }
 
 export interface PokemonDetailListTypeDTO {

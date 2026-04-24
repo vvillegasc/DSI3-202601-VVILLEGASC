@@ -1,0 +1,29 @@
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  padding: 20px;
+  min-height: 100vh;
+  background: #dbeafe;
+  box-sizing: border-box;
+  align-items: start;
+}
+
+.layout__detail {
+  position: sticky;
+  top: 20px;
+}
+
+.layout__gallery {
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .layout__detail {
+    position: static;
+  }
+}
