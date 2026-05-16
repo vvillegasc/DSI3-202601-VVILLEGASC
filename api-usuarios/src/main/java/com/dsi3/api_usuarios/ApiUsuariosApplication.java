@@ -1,4 +1,4 @@
-package com.example.api_usuarios;
+package com.dsi3.api_usuarios;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

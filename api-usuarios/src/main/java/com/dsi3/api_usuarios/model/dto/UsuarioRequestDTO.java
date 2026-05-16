@@ -1,4 +1,4 @@
-package main.java.com.dsi3.api_usuarios.model.dto;
+package com.dsi3.api_usuarios.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,6 +11,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UsuarioRequestDTO {
 
- private String nombre;
+    private String nombre;
+    private String email;
+    private String password;
+    private Integer edad;
 
 }
