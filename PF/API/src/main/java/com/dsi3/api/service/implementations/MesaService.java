@@ -12,6 +12,7 @@ import com.dsi3.api.model.dto.MesaRequestDTO;
 import com.dsi3.api.model.dto.MesaResponseDTO;
 import com.dsi3.api.model.entity.Mesa;
 import com.dsi3.api.repository.IMesaRepository;
+import com.dsi3.api.repository.IPedidoRepository;
 import com.dsi3.api.service.interfaces.IMesaService;
 
 import lombok.AllArgsConstructor;
@@ -21,6 +22,7 @@ import lombok.AllArgsConstructor;
 public class MesaService implements IMesaService {
 
     private final IMesaRepository mesaRepository;
+    private final IPedidoRepository pedidoRepository;
     private final MesaMapper mesaMapper;
 
     @Override
@@ -71,6 +73,10 @@ public class MesaService implements IMesaService {
     public ResponseEntity<Void> eliminarMesa(Long id) {
         if (!mesaRepository.existsById(id)) {
             return ResponseEntity.status(404).build();
+        }
+        long pedidosActivos = pedidoRepository.countByMesa_IdMesaAndEstadoIn(id, List.of("CREADA", "EN_PREPARACION"));
+        if (pedidosActivos > 0) {
+            return ResponseEntity.status(409).build();
         }
         mesaRepository.deleteById(id);
         return ResponseEntity.noContent().build();

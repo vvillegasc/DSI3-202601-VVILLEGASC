@@ -12,4 +12,5 @@ public interface IPedidoRepository extends JpaRepository<Pedido, Long> {
     List<Pedido> findByEstado(String estado);
     long countByEstadoIn(List<String> estados);
     long countByEstadoAndFechaCreacionBetween(String estado, LocalDateTime inicio, LocalDateTime fin);
+    long countByMesa_IdMesaAndEstadoIn(Long idMesa, List<String> estados);
 }
