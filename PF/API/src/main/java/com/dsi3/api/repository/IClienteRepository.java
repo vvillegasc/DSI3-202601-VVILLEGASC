@@ -8,5 +8,5 @@ import com.dsi3.api.model.entity.Cliente;
 
 public interface IClienteRepository extends JpaRepository<Cliente, Long> {
 
-    List<Cliente> findByNombre(String nombre, String email);
+    List<Cliente> findByNombreContainingIgnoreCaseOrEmailContainingIgnoreCase(String nombre, String email);
 }

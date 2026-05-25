@@ -31,7 +31,7 @@ public class DashboardService implements IDashboardService {
 
         LocalDateTime inicioDia = LocalDate.now().atStartOfDay();
         LocalDateTime finDia = inicioDia.plusDays(1);
-        long pedidosEntregadosHoy = pedidoRepository.countByEstadoAndFechaCreacion("ENTREGADA", inicioDia, finDia);
+        long pedidosEntregadosHoy = pedidoRepository.countByEstadoAndFechaCreacionBetween("ENTREGADA", inicioDia, finDia);
 
         DashboardResumenDTO resumen = DashboardResumenDTO.builder()
                 .productosActivos(productosActivos)

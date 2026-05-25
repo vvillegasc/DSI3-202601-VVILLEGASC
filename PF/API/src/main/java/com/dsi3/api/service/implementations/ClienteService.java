@@ -34,7 +34,7 @@ public class ClienteService implements IClienteService {
     public ResponseEntity<List<ClienteResponseDTO>> obtenerClientes(String busqueda) {
         List<Cliente> clientes;
         if (busqueda != null && !busqueda.isBlank()) {
-            clientes = clienteRepository.findByNombre(busqueda, busqueda);
+            clientes = clienteRepository.findByNombreContainingIgnoreCaseOrEmailContainingIgnoreCase(busqueda, busqueda);
         } else {
             clientes = clienteRepository.findAll();
         }
