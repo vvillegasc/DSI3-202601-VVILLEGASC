@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Café / Espresso palette */
+  --color-primary:        #7C4A1E;   /* café tostado */
+  --color-primary-hover:  #6B3D18;
+  --color-primary-light:  #FDF3EC;   /* crema muy clara */
+
+  --color-danger:         #8B3120;   /* terracota cálida */
+  --color-danger-hover:   #6E2619;
+  --color-danger-light:   #FDF0EC;
+
+  --color-success:        #A06B2C;   /* caramelo dorado */
+  --color-success-light:  #FDF6E3;
+
+  --color-warning:        #8B5E15;   /* ámbar oscuro */
+  --color-warning-light:  #FDF0D5;
+
+  --color-sidebar-bg:     #1C0F07;   /* espresso oscuro */
+  --color-sidebar-text:   #A08878;   /* café con leche suave */
+  --color-sidebar-active: #ffffff;
+  --color-sidebar-hover:  #2E1A10;   /* café oscuro hover */
+
+  --color-bg:             #F7F1EC;   /* fondo crema cálido */
+  --color-surface:        #FFFFFF;
+  --color-border:         #E8D9CE;   /* borde tono tierra */
+
+  --color-text-primary:   #1C0F07;   /* casi negro cálido */
+  --color-text-secondary: #7A5A4A;   /* marrón medio */
+  --color-text-muted:     #B09080;   /* café apagado */
+
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-full: 9999px;
+
+  --shadow-sm:  0 1px 2px rgba(0,0,0,.05);
+  --shadow-md:  0 4px 6px -1px rgba(0,0,0,.08), 0 2px 4px -1px rgba(0,0,0,.04);
+  --shadow-lg:  0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+
+  --sidebar-w:  240px;
+  --header-h:   0px;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+input, textarea, select { font-family: inherit; }
