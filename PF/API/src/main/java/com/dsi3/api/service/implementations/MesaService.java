@@ -29,6 +29,9 @@ public class MesaService implements IMesaService {
 
     @Override
     public ResponseEntity<MesaResponseDTO> crearMesa(MesaRequestDTO request) {
+        if (mesaRepository.existsByNumero(request.getNumero())) {
+            return ResponseEntity.status(409).body(null);
+        }
         Mesa mesa = mesaMapper.toEntity(request);
         Mesa guardada = mesaRepository.save(mesa);
         return ResponseEntity.status(201).body(mesaMapper.toResponse(guardada));
@@ -62,6 +65,9 @@ public class MesaService implements IMesaService {
         Optional<Mesa> existente = mesaRepository.findById(id);
         if (existente.isEmpty()) {
             return ResponseEntity.status(404).body(null);
+        }
+        if (mesaRepository.existsByNumeroAndIdMesaNot(request.getNumero(), id)) {
+            return ResponseEntity.status(409).body(null);
         }
         Mesa mesa = existente.get();
         mesa.setNumero(request.getNumero());

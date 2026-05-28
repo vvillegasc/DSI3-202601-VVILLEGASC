@@ -25,6 +25,9 @@ public class ClienteService implements IClienteService {
 
     @Override
     public ResponseEntity<ClienteResponseDTO> crearCliente(ClienteRequestDTO request) {
+        if (clienteRepository.existsByTelefono(request.getTelefono())) {
+            return ResponseEntity.status(409).body(null);
+        }
         Cliente cliente = clienteMapper.toEntity(request);
         Cliente guardado = clienteRepository.save(cliente);
         return ResponseEntity.status(201).body(clienteMapper.toResponse(guardado));
@@ -58,6 +61,9 @@ public class ClienteService implements IClienteService {
         Optional<Cliente> existente = clienteRepository.findById(id);
         if (existente.isEmpty()) {
             return ResponseEntity.status(404).body(null);
+        }
+        if (clienteRepository.existsByTelefonoAndIdClienteNot(request.getTelefono(), id)) {
+            return ResponseEntity.status(409).body(null);
         }
         Cliente cliente = existente.get();
         cliente.setNombre(request.getNombre());

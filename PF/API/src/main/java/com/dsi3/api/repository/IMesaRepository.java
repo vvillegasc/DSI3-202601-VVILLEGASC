@@ -11,4 +11,6 @@ public interface IMesaRepository extends JpaRepository<Mesa, Long> {
 
     List<Mesa> findByEstado(EstadoMesa estado);
     long countByEstado(EstadoMesa estado);
+    boolean existsByNumero(int numero);
+    boolean existsByNumeroAndIdMesaNot(int numero, Long idMesa);
 }
