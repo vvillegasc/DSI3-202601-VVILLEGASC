@@ -1,7 +1,8 @@
 package com.dsi3.api.model.dto;
 
+import com.dsi3.api.model.entity.Mesa.EstadoMesa;
+
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,6 +23,6 @@ public class MesaRequestDTO {
     @Min(1)
     private Integer capacidad;
 
-    @NotBlank
-    private String estado;
+    @NotNull
+    private EstadoMesa estado;
 }

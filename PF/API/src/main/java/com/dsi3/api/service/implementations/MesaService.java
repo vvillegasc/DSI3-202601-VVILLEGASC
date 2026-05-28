@@ -11,6 +11,8 @@ import com.dsi3.api.mapper.MesaMapper;
 import com.dsi3.api.model.dto.MesaRequestDTO;
 import com.dsi3.api.model.dto.MesaResponseDTO;
 import com.dsi3.api.model.entity.Mesa;
+import com.dsi3.api.model.entity.Mesa.EstadoMesa;
+import com.dsi3.api.model.entity.Pedido.EstadoPedido;
 import com.dsi3.api.repository.IMesaRepository;
 import com.dsi3.api.repository.IPedidoRepository;
 import com.dsi3.api.service.interfaces.IMesaService;
@@ -36,7 +38,7 @@ public class MesaService implements IMesaService {
     public ResponseEntity<List<MesaResponseDTO>> obtenerMesas(String estado) {
         List<Mesa> mesas;
         if (estado != null && !estado.isBlank()) {
-            mesas = mesaRepository.findByEstado(estado.toUpperCase());
+            mesas = mesaRepository.findByEstado(EstadoMesa.valueOf(estado.toUpperCase()));
         } else {
             mesas = mesaRepository.findAll();
         }
@@ -74,7 +76,7 @@ public class MesaService implements IMesaService {
         if (!mesaRepository.existsById(id)) {
             return ResponseEntity.status(404).build();
         }
-        long pedidosActivos = pedidoRepository.countByMesa_IdMesaAndEstadoIn(id, List.of("CREADA", "EN_PREPARACION"));
+        long pedidosActivos = pedidoRepository.countByMesa_IdMesaAndEstadoIn(id, List.of(EstadoPedido.CREADA, EstadoPedido.EN_PREPARACION));
         if (pedidosActivos > 0) {
             return ResponseEntity.status(409).build();
         }

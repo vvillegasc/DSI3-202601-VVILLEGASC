@@ -26,8 +26,15 @@ public class Cliente {
     @Column(name = "id_cliente")
     private Long idCliente;
 
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
+
+    @Column(name = "telefono", length = 20)
     private String telefono;
+
+    @Column(name = "email", length = 100)
     private String email;
+
+    @Column(name = "fecha_registro", nullable = false, updatable = false)
     private LocalDateTime fechaRegistro;
 }

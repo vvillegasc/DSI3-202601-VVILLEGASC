@@ -6,11 +6,12 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.dsi3.api.model.entity.Pedido;
+import com.dsi3.api.model.entity.Pedido.EstadoPedido;
 
 public interface IPedidoRepository extends JpaRepository<Pedido, Long> {
 
-    List<Pedido> findByEstado(String estado);
-    long countByEstadoIn(List<String> estados);
-    long countByEstadoAndFechaCreacionBetween(String estado, LocalDateTime inicio, LocalDateTime fin);
-    long countByMesa_IdMesaAndEstadoIn(Long idMesa, List<String> estados);
+    List<Pedido> findByEstado(EstadoPedido estado);
+    long countByEstadoIn(List<EstadoPedido> estados);
+    long countByEstadoAndFechaCreacionBetween(EstadoPedido estado, LocalDateTime inicio, LocalDateTime fin);
+    long countByMesa_IdMesaAndEstadoIn(Long idMesa, List<EstadoPedido> estados);
 }

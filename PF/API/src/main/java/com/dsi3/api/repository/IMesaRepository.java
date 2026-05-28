@@ -5,9 +5,10 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.dsi3.api.model.entity.Mesa;
+import com.dsi3.api.model.entity.Mesa.EstadoMesa;
 
 public interface IMesaRepository extends JpaRepository<Mesa, Long> {
 
-    List<Mesa> findByEstado(String estado);
-    long countByEstado(String estado);
+    List<Mesa> findByEstado(EstadoMesa estado);
+    long countByEstado(EstadoMesa estado);
 }

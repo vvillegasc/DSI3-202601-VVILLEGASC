@@ -24,11 +24,24 @@ public class Producto {
     @Column(name = "id_producto")
     private Long idProducto;
 
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
+
+    @Column(name = "descripcion", columnDefinition = "TEXT")
     private String descripcion;
+
+    @Column(name = "precio", nullable = false)
     private double precio;
+
+    @Column(name = "categoria", length = 100)
     private String categoria;
+
+    @Column(name = "imagen_url", length = 255)
     private String imagenUrl;
+
+    @Column(name = "disponible", nullable = false)
     private boolean disponible;
+
+    @Column(name = "stock", nullable = false)
     private int stock;
 }

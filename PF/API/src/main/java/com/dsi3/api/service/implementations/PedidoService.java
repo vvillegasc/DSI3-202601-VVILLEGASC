@@ -1,6 +1,5 @@
 package com.dsi3.api.service.implementations;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -14,7 +13,9 @@ import com.dsi3.api.model.dto.PedidoResponseDTO;
 import com.dsi3.api.model.entity.Cliente;
 import com.dsi3.api.model.entity.DetallePedido;
 import com.dsi3.api.model.entity.Mesa;
+import com.dsi3.api.model.entity.Mesa.EstadoMesa;
 import com.dsi3.api.model.entity.Pedido;
+import com.dsi3.api.model.entity.Pedido.EstadoPedido;
 import com.dsi3.api.model.entity.Producto;
 import com.dsi3.api.model.entity.Usuario;
 import com.dsi3.api.repository.IClienteRepository;
@@ -61,8 +62,7 @@ public class PedidoService implements IPedidoService {
                 .mesa(mesa.get())
                 .cliente(cliente)
                 .usuario(usuario.get())
-                .fechaCreacion(LocalDateTime.now())
-                .estado("CREADA")
+                .estado(EstadoPedido.CREADA)
                 .observaciones(request.getObservaciones())
                 .build();
 
@@ -82,7 +82,7 @@ public class PedidoService implements IPedidoService {
             pedido.getDetalles().add(detalle);
         }
 
-        mesa.get().setEstado("OCUPADA");
+        mesa.get().setEstado(EstadoMesa.OCUPADA);
         mesaRepository.save(mesa.get());
 
         Pedido guardado = pedidoRepository.save(pedido);
@@ -93,7 +93,7 @@ public class PedidoService implements IPedidoService {
     public ResponseEntity<List<PedidoResponseDTO>> obtenerPedidos(String estado) {
         List<Pedido> pedidos;
         if (estado != null && !estado.isBlank()) {
-            pedidos = pedidoRepository.findByEstado(estado.toUpperCase());
+            pedidos = pedidoRepository.findByEstado(EstadoPedido.valueOf(estado.toUpperCase()));
         } else {
             pedidos = pedidoRepository.findAll();
         }
@@ -118,7 +118,7 @@ public class PedidoService implements IPedidoService {
         if (pedido.isEmpty()) {
             return ResponseEntity.status(404).build();
         }
-        if (!pedido.get().getEstado().equals("CREADA")) {
+        if (pedido.get().getEstado() != EstadoPedido.CREADA) {
             return ResponseEntity.status(409).build();
         }
         pedidoRepository.deleteById(id);
@@ -133,10 +133,10 @@ public class PedidoService implements IPedidoService {
         }
         Pedido pedido = pedidoOpt.get();
         switch (pedido.getEstado()) {
-            case "CREADA" -> pedido.setEstado("EN_PREPARACION");
-            case "EN_PREPARACION" -> {
-                pedido.setEstado("ENTREGADA");
-                pedido.getMesa().setEstado("DISPONIBLE");
+            case CREADA -> pedido.setEstado(EstadoPedido.EN_PREPARACION);
+            case EN_PREPARACION -> {
+                pedido.setEstado(EstadoPedido.ENTREGADA);
+                pedido.getMesa().setEstado(EstadoMesa.DISPONIBLE);
                 mesaRepository.save(pedido.getMesa());
             }
             default -> {

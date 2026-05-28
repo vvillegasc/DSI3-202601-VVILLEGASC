@@ -24,8 +24,15 @@ public class Usuario {
     @Column(name = "id_usuario")
     private Long idUsuario;
 
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
+
+    @Column(name = "email", nullable = false, length = 100, unique = true)
     private String email;
+
+    @Column(name = "password_hash", nullable = false, length = 255)
     private String passwordHash;
+
+    @Column(name = "activo", nullable = false)
     private boolean activo;
 }
