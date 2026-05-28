@@ -53,6 +53,7 @@ public class Pedido {
     @Column(name = "fecha_creacion", nullable = false, updatable = false)
     private LocalDateTime fechaCreacion;
 
+    @Builder.Default
     @Enumerated(EnumType.STRING)
     @Column(name = "estado", nullable = false, length = 20)
     private EstadoPedido estado = EstadoPedido.CREADA;

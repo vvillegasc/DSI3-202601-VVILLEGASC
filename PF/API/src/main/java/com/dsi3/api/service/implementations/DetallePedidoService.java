@@ -60,7 +60,7 @@ public class DetallePedidoService implements IDetallePedidoService {
         if (pedidoOpt.isEmpty()) {
             return ResponseEntity.status(404).build();
         }
-        if (!pedidoOpt.get().getEstado().equals("CREADA")) {
+        if (pedidoOpt.get().getEstado() != Pedido.EstadoPedido.CREADA) {
             return ResponseEntity.status(409).build();
         }
         if (!detallePedidoRepository.existsById(idDetalle)) {

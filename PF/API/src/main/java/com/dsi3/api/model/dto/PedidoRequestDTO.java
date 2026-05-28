@@ -19,6 +19,7 @@ public class PedidoRequestDTO {
     @NotNull
     private Long idMesa;
 
+    @NotNull
     private Long idCliente;
 
     @NotNull

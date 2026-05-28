@@ -11,6 +11,7 @@ import com.dsi3.api.model.entity.Pedido.EstadoPedido;
 public interface IPedidoRepository extends JpaRepository<Pedido, Long> {
 
     List<Pedido> findByEstado(EstadoPedido estado);
+    List<Pedido> findByCliente_IdCliente(Long idCliente);
     long countByEstadoIn(List<EstadoPedido> estados);
     long countByEstadoAndFechaCreacionBetween(EstadoPedido estado, LocalDateTime inicio, LocalDateTime fin);
     long countByMesa_IdMesaAndEstadoIn(Long idMesa, List<EstadoPedido> estados);

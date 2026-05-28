@@ -12,6 +12,7 @@ import com.dsi3.api.model.dto.ClienteRequestDTO;
 import com.dsi3.api.model.dto.ClienteResponseDTO;
 import com.dsi3.api.model.entity.Cliente;
 import com.dsi3.api.repository.IClienteRepository;
+import com.dsi3.api.repository.IPedidoRepository;
 import com.dsi3.api.service.interfaces.IClienteService;
 
 import lombok.AllArgsConstructor;
@@ -21,6 +22,7 @@ import lombok.AllArgsConstructor;
 public class ClienteService implements IClienteService {
 
     private final IClienteRepository clienteRepository;
+    private final IPedidoRepository pedidoRepository;
     private final ClienteMapper clienteMapper;
 
     @Override
@@ -77,6 +79,9 @@ public class ClienteService implements IClienteService {
     public ResponseEntity<Void> eliminarCliente(Long id) {
         if (!clienteRepository.existsById(id)) {
             return ResponseEntity.status(404).build();
+        }
+        if (!pedidoRepository.findByCliente_IdCliente(id).isEmpty()) {
+            return ResponseEntity.status(409).build();
         }
         clienteRepository.deleteById(id);
         return ResponseEntity.noContent().build();

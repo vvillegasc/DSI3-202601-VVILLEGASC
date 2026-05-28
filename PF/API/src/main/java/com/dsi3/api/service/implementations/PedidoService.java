@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.dsi3.api.mapper.PedidoMapper;
 import com.dsi3.api.model.dto.PedidoRequestDTO;
@@ -39,6 +40,7 @@ public class PedidoService implements IPedidoService {
     private final PedidoMapper pedidoMapper;
 
     @Override
+    @Transactional
     public ResponseEntity<PedidoResponseDTO> crearPedido(PedidoRequestDTO request) {
         Optional<Mesa> mesa = mesaRepository.findById(request.getIdMesa());
         if (mesa.isEmpty()) {
@@ -49,18 +51,14 @@ public class PedidoService implements IPedidoService {
             return ResponseEntity.status(404).body(null);
         }
 
-        Cliente cliente = null;
-        if (request.getIdCliente() != null) {
-            Optional<Cliente> clienteOpt = clienteRepository.findById(request.getIdCliente());
-            if (clienteOpt.isEmpty()) {
-                return ResponseEntity.status(404).body(null);
-            }
-            cliente = clienteOpt.get();
+        Optional<Cliente> clienteOpt = clienteRepository.findById(request.getIdCliente());
+        if (clienteOpt.isEmpty()) {
+            return ResponseEntity.status(404).body(null);
         }
 
         Pedido pedido = Pedido.builder()
                 .mesa(mesa.get())
-                .cliente(cliente)
+                .cliente(clienteOpt.get())
                 .usuario(usuario.get())
                 .estado(EstadoPedido.CREADA)
                 .observaciones(request.getObservaciones())
@@ -90,6 +88,7 @@ public class PedidoService implements IPedidoService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public ResponseEntity<List<PedidoResponseDTO>> obtenerPedidos(String estado) {
         List<Pedido> pedidos;
         if (estado != null && !estado.isBlank()) {
@@ -104,6 +103,7 @@ public class PedidoService implements IPedidoService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public ResponseEntity<PedidoResponseDTO> obtenerPedidoPorId(Long id) {
         Optional<Pedido> pedido = pedidoRepository.findById(id);
         if (pedido.isEmpty()) {
@@ -126,6 +126,7 @@ public class PedidoService implements IPedidoService {
     }
 
     @Override
+    @Transactional
     public ResponseEntity<PedidoResponseDTO> avanzarEstado(Long id) {
         Optional<Pedido> pedidoOpt = pedidoRepository.findById(id);
         if (pedidoOpt.isEmpty()) {
