@@ -1,0 +1,40 @@
+<app-dashboard-layout>
+  <div class="page">
+    <div class="page__header">
+      <div>
+        <h1 class="page__title">Clientes</h1>
+        <span class="page__breadcrumb">MesaYa / Clientes</span>
+      </div>
+      <app-button label="+ NUEVO CLIENTE" (click)="abrirCrear()" />
+    </div>
+
+    <app-search-bar
+      placeholder="Buscar por nombre o correo..."
+      [value]="busqueda()"
+      (valueChange)="onBusqueda($event)"
+    />
+
+    <p class="page__count">Clientes ({{ clientes().length }} registros)</p>
+
+    <div class="page__grid">
+      @for (c of clientes(); track c.idCliente) {
+        <app-cliente-card [cliente]="c" (editar)="abrirEditar($event)" (eliminar)="eliminar($event)" />
+      } @empty {
+        <p class="page__empty">No hay clientes registrados.</p>
+      }
+    </div>
+  </div>
+</app-dashboard-layout>
+
+<app-modal
+  [title]="editando() ? 'Editar Cliente' : 'Nuevo Cliente'"
+  [visible]="modalVisible()"
+  (close)="modalVisible.set(false)"
+>
+  <div class="modal-form">
+    <app-form-field label="Nombre completo" id="cNombre" [value]="form.nombre" (valueChange)="form.nombre = $event" />
+    <app-form-field label="Correo electrónico" id="cEmail" type="email" [value]="form.email" (valueChange)="form.email = $event" />
+    <app-form-field label="Teléfono" id="cTel" [value]="form.telefono" (valueChange)="form.telefono = $event" />
+    <app-button label="GUARDAR" [fullWidth]="true" (click)="guardar()" />
+  </div>
+</app-modal>
